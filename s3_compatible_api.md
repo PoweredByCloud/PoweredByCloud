@@ -129,7 +129,7 @@ $ s3cmd ls s3://mybucket/
 $ s3cmd --recursive ls s3://mybucket/
 
 # Upload file
-# Remember adding --disable-multipart option so that s3cmd use PutObject api to upload files
+# Remember adding --disable-multipart option so that s3cmd use PutObject API to upload files
 # PoweredBy.Cloud does not support multipart upload right now
 $ s3cmd --disable-multipart put /path/to/demo.png s3://mybucket/path/to/demo.png
 
