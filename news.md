@@ -1,3 +1,0 @@
-# News
-
-Working in progress
