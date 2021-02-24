@@ -4,7 +4,7 @@ Poweredby.Cloud provides support for Amazon S3 compatible API.
 This means that you can continue to use your existing Amazon S3 tools (for example, SDK clients and CLI tools)
 and also you can make minimal changes to their applications to work with PowerdbBy.Cloud.
 
-### Amazon S3 compatible API support
+### Amazon S3 compatibility API support
 
 Poweredby.Cloud support these following APIs:
 
