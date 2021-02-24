@@ -125,7 +125,7 @@ $ s3cmd ls
 # List files
 $ s3cmd ls s3://mybucket/
 
-# List all files in bucket
+# List files in bucket recursivly
 $ s3cmd --recursive ls s3://mybucket/
 
 # Upload file
