@@ -139,5 +139,3 @@ $ s3cmd get s3://mybucket/path/to/demo.png
 # Delete file
 $ s3cmd rm s3://mybucket/path/to/demo.png
 ```
-
-### AWS cli
