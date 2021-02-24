@@ -46,3 +46,21 @@ s3 = boto3.resource(
 for bucket in s3.buckets.all():
     print(bucket.name)
 ```
+
+#### s3cmd
+
+[S3cmd](https://s3tools.org/s3cmd) is a popular command line S3 client for Linux and Mac.
+First follow [this link](https://github.com/s3tools/s3cmd/blob/master/INSTALL.md) to install.
+
+To configure PoweredBy.Cloud as your default provider, use the *--configure* option.
+
+```bash
+$ s3cmd --configure
+```
+
+s3cmd requests your access and secret keys.
+
+```bash
+Access Key: 82686f2af0e34d4b9da1ab4a593dff46
+Secret Key: 86bf1f02e5e4427ca14901788ee24393d8d6898a907648c49b8fc5fd529895b0
+```
