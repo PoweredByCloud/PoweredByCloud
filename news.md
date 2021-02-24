@@ -1,3 +1,3 @@
-# Docs
+# News
 
 Working in progress
