@@ -14,6 +14,7 @@ Poweredby.Cloud support these following APIs:
 * HeadObject
 * ListBuckets
 * ListObjects
+* ListObjectsV2
 * PutObject
 
 ## Configuration
@@ -138,4 +139,53 @@ $ s3cmd get s3://mybucket/path/to/demo.png
 
 # Delete file
 $ s3cmd rm s3://mybucket/path/to/demo.png
+```
+
+### AWS CLI 2
+
+AWS CLI is official AWS cli tool. Follow [this link](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) to install AWS CLI 2.
+
+Use `configure` command to set credentials, region and output format.
+
+```bash
+$ aws configure
+AWS Access Key ID [None]: 82686f2af0e34d4b9da1ab4a593dff46
+AWS Secret Access Key [None]: 86bf1f02e5e4427ca14901788ee24393d8d6898a907648c49b8fc5fd529895b0
+Default region name [None]: us-east-1
+Default output format [None]: json
+```
+
+PoweredBy.Cloud does not support multipart upload right now,
+`multipart_threshold` need to be configured to a very large value.
+
+```bash
+# You can upload files that smaller than 10GB.
+$ aws configure set default.s3.multipart_threshold 10GB
+```
+
+Now you can use AWS CLI to manage files like this
+
+```bash
+# List buckets
+$ aws --endpoint-url https://stdcdn.com s3 ls
+
+# List files
+$ aws --endpoint-url https://stdcdn.com s3 ls s3://mybucket
+
+# List files in bucket recursivly
+$ aws --endpoint-url https://stdcdn.com s3 ls --recursive s3://mybucket
+
+# Upload file
+# Remember to set multipart_threshold for uploading large files
+# PoweredBy.Cloud does not support multipart upload right now
+$ aws --endpoint-url https://stdcdn.com s3 cp /path/to/demo.png s3://mybucket/path/to/demo.png
+
+# Upload folder
+$ aws --endpoint-url https://stdcdn.com s3 cp --recursive /path/to/folder s3://mybucket/path/to/folder
+
+# Download file
+$ aws --endpoint-url https://stdcdn.com s3 cp s3://mybucket/path/to/demo.png /path/to/demo.png
+
+# Delete file
+$ aws --endpoint-url https://stdcdn.com s3 rm s3://mybucket/path/to/demo.png
 ```
