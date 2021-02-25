@@ -159,7 +159,6 @@ PoweredBy.Cloud does not support multipart upload right now,
 `multipart_threshold` need to be configured if you want to upload files that larger than 8MB.
 
 ```bash
-# You can upload files that smaller than 10GB.
 $ aws configure set default.s3.multipart_threshold 10GB
 ```
 
@@ -170,6 +169,7 @@ Add the following line to your shell configuration profile file.
 The shell configuration profile file could be `~/.bashrc` or `~/.zshrc` depending on which shell you use.
 
 ```bash
+# Add this line to your shell configuration profile file
 # pbc stands for PoweredBy.Cloud, you can change to anything you like
 alias pbc="aws --endpoint-url https://stdcdn.com"
 ```
