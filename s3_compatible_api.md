@@ -156,14 +156,52 @@ Default output format [None]: json
 ```
 
 PoweredBy.Cloud does not support multipart upload right now,
-`multipart_threshold` need to be configured to a very large value.
+`multipart_threshold` need to be configured if you want to upload files that larger than 8MB.
 
 ```bash
 # You can upload files that smaller than 10GB.
 $ aws configure set default.s3.multipart_threshold 10GB
 ```
 
-Now you can use AWS CLI to manage files like this
+AWS CLI does not support to set `endpoint url` in configuration,
+so `--endpoint-url https://stdcdn.com` need to by added to every command.
+It's recommended to create a alias for `aws --endpoint-url https://stdcdn.com`.
+Add the following line to your shell configuration profile file.
+The shell configuration profile file could be `~/.bashrc` or `~/.zshrc` depending on which shell you use.
+
+```bash
+# pbc stands for PoweredBy.Cloud, you can change to anything you like
+alias pbc="aws --endpoint-url https://stdcdn.com"
+```
+
+Now you can use `pbc` to manage files like this
+
+```bash
+# List buckets
+$ pbc s3 ls
+
+# List files
+$ pbc s3 ls s3://mybucket
+
+# List files in bucket recursivly
+$ pbc s3 ls --recursive s3://mybucket
+
+# Upload file
+# Remember to set multipart_threshold for uploading large files
+# PoweredBy.Cloud does not support multipart upload right now
+$ pbc s3 cp /path/to/demo.png s3://mybucket/path/to/demo.png
+
+# Upload folder
+$ pbc s3 cp --recursive /path/to/folder s3://mybucket/path/to/folder
+
+# Download file
+$ pbc s3 cp s3://mybucket/path/to/demo.png /path/to/demo.png
+
+# Delete file
+$ pbc s3 rm s3://mybucket/path/to/demo.png
+```
+
+or use `aws` directly
 
 ```bash
 # List buckets
