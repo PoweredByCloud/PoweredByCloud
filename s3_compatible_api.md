@@ -9,6 +9,7 @@ and also you can make minimal changes to their applications to work with Powerdb
 Poweredby.Cloud support these following APIs:
 
 * DeleteObject
+* GetBucketLocation
 * GetObject
 * HeadBucket
 * HeadObject
