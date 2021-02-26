@@ -39,7 +39,7 @@ s3 = boto3.resource(
     's3',
     aws_access_key_id='82686f2af0e34d4b9da1ab4a593dff46',
     aws_secret_access_key='86bf1f02e5e4427ca14901788ee24393d8d6898a907648c49b8fc5fd529895b0',
-    region_name='us-east-1',
+    region_name='us-west-2',
     endpoint_url='https://stdcdn.com'
 )
 
@@ -66,10 +66,10 @@ Access Key: 82686f2af0e34d4b9da1ab4a593dff46
 Secret Key: 86bf1f02e5e4427ca14901788ee24393d8d6898a907648c49b8fc5fd529895b0
 ```
 
-Enter `us-east-1` for default region.
+Enter `us-west-2` for default region.
 
 ```bash
-Default Region [US]: us-east-1
+Default Region [US]: us-west-2
 ```
 
 Enter `stdcdn.com` for S3 endpoint.
@@ -151,7 +151,7 @@ Use `configure` command to set credentials, region and output format.
 $ aws configure
 AWS Access Key ID [None]: 82686f2af0e34d4b9da1ab4a593dff46
 AWS Secret Access Key [None]: 86bf1f02e5e4427ca14901788ee24393d8d6898a907648c49b8fc5fd529895b0
-Default region name [None]: us-east-1
+Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
