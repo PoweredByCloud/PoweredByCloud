@@ -4,6 +4,10 @@ Poweredby.Cloud provides support for Amazon S3 compatible API.
 This means that you can continue to use your existing Amazon S3 tools (for example, SDK clients and CLI tools)
 and also you can make minimal changes to their applications to work with PowerdbBy.Cloud.
 
+Due to network limitation, files larger than 100MB cannot be uploaded using
+S3 compatible API. If you want to upload files larger than 100MB,
+please use [PowereedBy.Cloud's Dashboard](https://poweredby.cloud/dashboard) instead.
+
 ## API support
 
 Poweredby.Cloud support these following APIs:
@@ -160,7 +164,7 @@ PoweredBy.Cloud does not support multipart upload right now,
 `multipart_threshold` need to be configured if you want to upload files that larger than 8MB.
 
 ```bash
-$ aws configure set default.s3.multipart_threshold 10GB
+$ aws configure set default.s3.multipart_threshold 100MB
 ```
 
 AWS CLI does not support to set `endpoint url` in configuration,
